@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>JONATHAN YAQUITEN - PORTFOLIO</title>
+	<link rel="icon" type="image/gif" href="img/img.jpg" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="container">
+				<div class="toggle">
+					<i class="fa fa-bars menu-icon"></i>
+				</div>
+				<ul>
+					<li><a href="#section1">home</a></li>
+					<li><a href="#section2">skills</a></li>
+					<li><a href="#section3">works</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<main>
+		<div class="content">
+			<div class="row clear">
+				<span class="anchor" id="section1"></span>
+				<section class="col-lg-2 col-md-3 col-sm-12"></section>
+				<section class="col-lg-8 col-md-6 col-sm-12">
+					<div class="animate-container">
+						<div class="animate-center">
+							<div class="first-layer"></div>
+							<div class="second-layer"></div>
+							<div class="third-layer"></div>
+							<div class="fourth-layer"></div>
+							<div class="img-fifth-layer"></div>
+						</div>
+					</div>
+					<div class="social-media">
+						<a href="https://web.facebook.com/yakijuu" target="_blank"><img src="img/facebook.png" alt="facebook" class="border"></a>
+						<a href="https://mail.google.com" target="_blank"><img src="img/google.png" alt="google" class="border"></a>
+						<a href="https://mail.yahoo.com" target="_blank"><img src="img/yahoo.png" alt="yahoo" class="border"></a>
+						<a href="https://github.com/jonathanyaquiten" target="_blank"><img src="img/github.png" alt="github" class="border"></a>
+					</div>
+					<a href="docs/jonathanYaquiten.pdf" download><button class="btn">download my cv</button></a>
+				</section>
+				<section class="col-lg-2 col-md-3 col-sm-12"></section>
+			</div>
+			<div class="row clear">
+				<section class="col-lg-4 col-md-4 col-sm-12">
+					<img src="img/semantic.png" alt="semantic" class="border">
+					<p>Semantic Tags</p>
+				</section>
+				<section class="col-lg-4 col-md-4 col-sm-12">
+					<img src="img/responsive.png" alt="responsive" class="border">
+					<p>Responsive Web Design</p>
+				</section>
+				<section class="col-lg-4 col-md-4 col-sm-12">
+					<img src="img/planning.png" alt="planning" class="border">
+					<p>Time and Planing</p>
+				</section>
+			</div>
+			<div class="row clear">
+				<span class="anchor" id="section2"></span>
+				<strong><h2>SKILLS</h2></strong>
+				<section class="col-lg-6 col-md-6 col-sm-6">
+					<p>HTML</p>
+					<p>CSS</p>
+					<p>BOOTSTRAP</p>
+					<P>JQUERY</P>
+				</section>
+				<section class="col-lg-6 col-md-6 col-sm-6">
+					<p>AJAX</p>
+					<p>PHP</p>
+					<p>MYSQL</p>
+					<p>LARAVEL</p>
+				</section>
+			</div>
+			<div class="row clear">
+				<span class="anchor" id="section3"></span>
+				<strong><h2>WORKS</h2></strong>
+				<section class="col-lg-4 col-md-4 col-sm-12">
+					<a href="https://jonathanyaquiten.github.io/capstone-1-b5dc/" target="_blank">
+						<img src="img/csp1.jpg" alt="project" class="border">
+					</a>
+						<p>Simple Design using Bootstrap Framework v3.3.7</p>
+				</section>
+				<section class="col-lg-4 col-md-4 col-sm-12">
+					<a href="https://yakilicious.000webhostapp.com/" target="_blank">
+						<img src="img/csp2.jpg" alt="project" class="border">
+					</a>
+						<p>Simple Ecommerce Website using PHP MySQL</p>
+				</section>
+				<section class="col-lg-4 col-md-4 col-sm-12">
+					<a href="http://kiyabrr.000webhostapp.com" target="_blank">
+						<img src="img/csp3.jpg" alt="project" class="border">
+					</a>
+						<p>Simple Job Searching Website using LARAVEL Framework v5.4</p>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<footer class="bottom">
+		<div class="container clear">
+			<section class="col-lg-3 col-md-3 col-sm-0">
+				<span></span>
+			</section>
+			<section class="col-lg-6 col-md-6 col-sm-12">
+				<h4 class="t-white">Copyright &copy; 2018 All Rights Reserved</h4>
+			</section>
+			<section class="col-lg-3 col-md-3 col-sm-0">
+				<span></span>
+			</section>
+		</div>
+	</footer>
+
+
+	<script>
+		$(document).ready(function(){
+			$('.menu-icon').click(function(){
+				$('ul').toggleClass('menu-toggle')
+			})
+			$('nav li').on('click', function(){
+				$('ul').removeClass('menu-toggle')
+			})
+
+			$(window).on('scroll', function(){
+				if($(window).scrollTop()){
+					$('nav').addClass('background')
+					$('.toggle').css('background', '#001f44')
+				}
+				else{
+					$('nav').removeClass('background')
+					$('.toggle').css('background', '#00316b')
+				}
+			})
+
+			nav = $('nav')
+			nav_height = nav.outerHeight();
+
+			nav.find('a').on('click', function(){
+				var $el = $(this)
+				id = $el.attr('href');
+				$('html, body').animate({scrollTop: $(id).offset().top - nav_height}, 500);
+				return false;
+			});
+		})
+
+
+	</script>
+
+	<?php
+	$s = concat('hello', 'w');
+	echo $s;
+	?
+</body>
+</html>
+
